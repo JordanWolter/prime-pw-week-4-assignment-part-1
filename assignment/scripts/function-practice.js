@@ -61,8 +61,8 @@ console.log( 'isPositive - should say false', isPositive(-3) );
 //    array is empty, return `undefined`.
 
 function getLast( array ) {
-  if (!getLast.length){
-    return console.log('undefined');
+  if ( !getLast.length ){
+    return console.log( 'undefined' );
   } else {
     return array.pop();
   }
@@ -75,8 +75,8 @@ console.log(getLast([ 'dog', 'cat', 'bird', 'fish' ]));
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
   let found = false;
-  for ( let i = 0; i < array.length; i++){
-    if (array[i] === value){
+  for ( let i = 0; i < array.length; i++ ){
+    if ( array[i] === value ){
     return true;
     }
   }
@@ -85,10 +85,10 @@ function find( value, array ){
 
 array = [ 1, 2, 3, 4, 5, 6, 7, 8, 9 ];
 
-console.log(find(5, array));
-console.log(find(12, array));
-console.log(find(7, array));
-console.log(find(34, array));
+console.log( find( 5, array ));
+console.log( find( 12, array ));
+console.log( find( 7, array ));
+console.log( find( 34, array ));
 
 
 // ----------------------
@@ -96,18 +96,32 @@ console.log(find(34, array));
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
-function isFirstLetter(letter, string) {
-
+function isFirstLetter( letter, string ) {
+  let found = false;
+  for ( let i = 0; i < string.length; i++ ){
+    if ( string[i] === letter ){
+      return true;
+    }
+  }
+  return found;
 }
 console.log( 'isFirstLetter - should say true', isFirstLetter('a', 'apple') );
 console.log( 'isFirstLetter - should say false', isFirstLetter('z', 'apple') );
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll( ) {
-  let sum = 0
+
+function sumAll( array ) {
+  let sum = 0;
+  let i = 0;
   // TODO: loop to add items
+  while( i != array.length ){
+    sum += array[i];
+    i++;
+  }
   return sum;
 }
+
+console.log( sumAll([ 1, 2, 3, 4 ]))
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
